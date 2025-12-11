@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Cliente {
 
     private String Nombre;
@@ -8,23 +10,15 @@ public class Cliente {
     private  String Provincia;
     private  String Telefono;
     private  String Email;
+    private List<Factura> facturas;
 
+    public String getNombre() {return Nombre;}
 
-    public String getNombre() {
-        return Nombre;
-    }
+    public void setNombre(String nombre) {Nombre = nombre;}
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
+    public String getApellidos() {return Apellidos;}
 
-    public String getApellidos() {
-        return Apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        Apellidos = apellidos;
-    }
+    public void setApellidos(String apellidos) {Apellidos = apellidos;}
 
     public String getNif() {
         return Nif;
@@ -72,5 +66,13 @@ public class Cliente {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    public List<Factura> getFacturas() {
+        return facturas;
+    }
+
+    public void setFacturas(List<Factura> factura) {
+        this.facturas = factura;
     }
 }
