@@ -1,5 +1,6 @@
 import features.Client;
 
+import java.util.List;
 import java.util.Scanner;
 import services.ClientService;
 
@@ -68,10 +69,26 @@ public class Main {
     }
 
     private static void listarClientes(ClientService clientService) {
+        List<Client> listacliente = clientService.obtenerTodosLosClientes();
+        for (int i=0; i<listacliente.size(); i++){
+            System.out.println(listacliente.get(i));
+        }
 
     }
 
     private static void altaCliente(ClientService clientService) {
+        String nombre=leerTextoObligatorio("introduce el nombre");
+        String apellidos=leerTextoObligatorio("introduce los apellidos");
+        String nif=leerTextoObligatorio("introduce el nif");
+        String direccion=leerTextoObligatorio("introduce la direccion");
+        String localidad=leerTextoObligatorio("introduce la localidad");
+        String provincia=leerTextoObligatorio("introduce la provincia");
+        String telefono = leerTextoObligatorio("introduce un numero de telefono");
+        String email=leerTextoObligatorio("introduce un email");
+        Client newClient =new Client(nombre, apellidos,  nif, direccion, localidad, provincia, telefono, email);
+        clientService.crearCliente(newClient);
+
+
 
     }
 
